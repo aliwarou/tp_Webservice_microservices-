@@ -1,0 +1,17 @@
+type Classe {
+    id: ID!
+    nom: String!
+    description: String
+    niveau: String
+}
+
+type Query {
+    getAllClasses: [Classe]
+}
+
+type Mutation {
+    createClasse(nom: String!,description: String, niveau: String): Classe,
+    updateClasse(nom: String!,id: ID!,,description: String, niveau: String): Classe
+}
+
+

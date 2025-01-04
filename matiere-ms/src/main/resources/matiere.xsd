@@ -1,0 +1,82 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://model.matiere_ms.gestionEcole.com"
+           targetNamespace="http://model.matiere_ms.gestionEcole.com"
+           elementFormDefault="qualified">
+
+
+
+    <xs:complexType name="matiereInfo">
+        <xs:sequence>
+            <xs:element name="matiereId" type="xs:long" />
+            <xs:element name="name" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="serviceStatus">
+        <xs:sequence>
+            <xs:element name="status" type="xs:string" />
+            <xs:element name="message" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="addMatiereRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="matiereInfo" type="tns:matiereInfo" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="addMatiereResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus" />
+                <xs:element name="matiereInfo" type="tns:matiereInfo" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getMatiereByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="matiereId" type="xs:long" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getMatiereResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="matiereInfo" type="tns:matiereInfo" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateMatiereRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="matiereInfo" type="tns:matiereInfo" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="updateMatiereResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="deleteMatiereRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="matiereId" type="xs:long" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="deleteMatiereResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
